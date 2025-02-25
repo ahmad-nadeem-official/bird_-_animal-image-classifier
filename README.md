@@ -1,148 +1,41 @@
-Bold
-Italic
-Underline
+**Bird vs Hare Image Classification using Convolutional Neural Networks (CNN)**
+===============================================================================
 
-- Header -
+📜 **Overview**
+---------------
 
-- Font Size -
-Bullet Points
-Numbering
-Image Classification Model: Bird vs Hare
-Overview
-This project demonstrates the development of a Convolutional Neural Network (CNN) for classifying images of bald eagles (birds) and hares into their respective categories. The model is trained using a dataset containing images of both classes and utilizes the TensorFlow and Keras libraries to perform the training and evaluation.
+Welcome to the **Bird vs Hare Image Classification** project! This repository demonstrates how to build a **Convolutional Neural Network (CNN)** model using **TensorFlow** and **Keras** to classify images of **bald eagles (birds)** and **hares**. The model is trained and evaluated on a dataset of images, and it achieves impressive accuracy for distinguishing between these two classes.
 
-Table of Contents
-Introduction
-Dataset
-Model Architecture
-Training Results
-Evaluation
-How to Run
-Future Improvements
-Introduction
-This image classification model is based on Convolutional Neural Networks (CNNs), a popular architecture for image-related tasks. It classifies two categories of images: "birds" (bald eagle) and "hares." The project demonstrates the process from data extraction to model evaluation, including accuracy and loss evaluation.
+This project is ideal for anyone looking to understand how to apply deep learning models to image classification tasks and get familiar with working with CNNs.
 
-The model is implemented using TensorFlow and Keras, and it is trained on images resized to 128x128 pixels. The results of the model’s performance on the test data are shown below.
+🛠 **Technologies Used**
+------------------------
 
-Dataset
-The dataset used for training the model consists of images from two categories:
+*   **TensorFlow & Keras**: For building and training the CNN model.
+*   **NumPy**: For data manipulation.
+*   **Matplotlib**: For visualizing training history and images.
+*   **Pillow**: For image preprocessing.
+*   **OpenCV**: For image display and manipulation.
+*   **scikit-learn**: For splitting the dataset into training and test sets.
 
-Birds (Bald Eagles) - Folder: /content/data(CNN)/bird bald_eagle
-Hares - Folder: /content/data(CNN)/hare
-Each folder contains a set of images, and these images are labeled accordingly:
+📊 **Dataset**
+--------------
 
-0 for hare
-1 for bald eagle
-Dataset Details
-Class	Number of Images
-Bald Eagles	1460
-Hares	1356
-Total	2816
-Model Architecture
-The CNN model used for this classification task consists of the following layers:
+The dataset contains two classes of images:
 
-Conv2D Layer: 32 filters with a (3, 3) kernel, ReLU activation
-MaxPooling2D Layer: (2, 2) pool size
-Conv2D Layer: 64 filters with a (3, 3) kernel, ReLU activation
-MaxPooling2D Layer: (2, 2) pool size
-Flatten Layer
-Dense Layer: 128 neurons, ReLU activation
-Dropout Layer: 50% dropout
-Dense Layer: 64 neurons, ReLU activation
-Dropout Layer: 50% dropout
-Dense Layer: Output layer with 2 neurons (for 2 classes), softmax activation
-Optimizer and Loss Function
-Optimizer: Adam
-Loss Function: Sparse Categorical Crossentropy
-Training Results
-The model was trained for 10 epochs, and the following results were obtained:
+1.  **Bald Eagles (Birds)**
+2.  **Hares**
 
-Metric	Train Value	Validation Value
-Loss	0.4191	0.4207
-Accuracy	0.8664	0.8652
-The model achieves an accuracy of approximately 86% on both the training and validation datasets.
+Each image is resized to **128x128** pixels and is converted to **RGB format** for training the CNN.
 
-Evaluation
-After training, the model was evaluated on the test data. Here are the final results:
+*   **Bald Eagles** images are stored under `/content/data(CNN)/bird bald_eagle/`
+*   **Hares** images are stored under `/content/data(CNN)/hare/`
 
-Test Loss: 0.4207
-Test Accuracy: 86.52%
-Example Predictions
-Prediction for a Hare Image:
+### **Dataset Summary**
 
-Model predicted: Hare
-Actual image:
-Prediction for a Bird Image:
+**Class**
 
-Model predicted: Bird
-Actual image:
-How to Run
-To run this model on your local machine or a cloud platform, follow these steps:
-
-Install Required Libraries:
-
-
-pip install tensorflow numpy pandas matplotlib opencv-python pillow scikit-learn
-Download the Dataset: Ensure you have the dataset zipped and extracted. You can unzip the dataset by using the following:
-
-from zipfile import ZipFile
-with ZipFile('data(CNN).zip', 'r') as zip:
-    zip.extractall('data(CNN)')
-Run the Training Script:
-
-Execute the script provided in this repository. It will handle data loading, preprocessing, model training, and evaluation.
-Make Predictions:
-
-After training, you can input new images and use the model.predict() method to classify them.
-Future Improvements
-Data Augmentation: Implementing data augmentation (rotations, flips, etc.) to increase the dataset's size and diversity could improve model performance.
-Hyperparameter Tuning: Experimenting with different architectures, optimizers, or activation functions to improve the model's accuracy further.
-Real-Time Inference: Integrating the model with real-time image capture systems for live predictions.
-Convert to Markdown
-Image Classification Model: Bird vs Hare
-========================================
-
-Overview
---------
-
-This project demonstrates the development of a Convolutional Neural Network (CNN) for classifying images of bald eagles (birds) and hares into their respective categories. The model is trained using a dataset containing images of both classes and utilizes the TensorFlow and Keras libraries to perform the training and evaluation.
-
-Table of Contents
------------------
-
-1.  Introduction
-2.  Dataset
-3.  Model Architecture
-4.  Training Results
-5.  Evaluation
-6.  How to Run
-7.  Future Improvements
-
-Introduction
-------------
-
-This image classification model is based on Convolutional Neural Networks (CNNs), a popular architecture for image-related tasks. It classifies two categories of images: "birds" (bald eagle) and "hares." The project demonstrates the process from data extraction to model evaluation, including accuracy and loss evaluation.
-
-The model is implemented using **TensorFlow** and **Keras**, and it is trained on images resized to 128x128 pixels. The results of the model’s performance on the test data are shown below.
-
-Dataset
--------
-
-The dataset used for training the model consists of images from two categories:
-
-1.  **Birds (Bald Eagles)** - Folder: `/content/data(CNN)/bird bald_eagle`
-2.  **Hares** - Folder: `/content/data(CNN)/hare`
-
-Each folder contains a set of images, and these images are labeled accordingly:
-
-*   **0** for hare
-*   **1** for bald eagle
-
-### Dataset Details
-
-Class
-
-Number of Images
+**Number of Images**
 
 **Bald Eagles**
 
@@ -156,37 +49,45 @@ Number of Images
 
 2816
 
-Model Architecture
-------------------
+### **Sample Images**
 
-The CNN model used for this classification task consists of the following layers:
+1.  **Bald Eagle**  
+    
+2.  **Hare**  
+    
 
-*   **Conv2D Layer**: 32 filters with a (3, 3) kernel, ReLU activation
-*   **MaxPooling2D Layer**: (2, 2) pool size
-*   **Conv2D Layer**: 64 filters with a (3, 3) kernel, ReLU activation
-*   **MaxPooling2D Layer**: (2, 2) pool size
+⚙️ **Model Architecture**
+-------------------------
+
+The CNN model built for this project has the following architecture:
+
+*   **Input Layer**: (128x128x3) - RGB Image
+*   **Conv2D Layer**: 32 filters, (3x3) kernel, ReLU activation
+*   **MaxPooling2D Layer**: (2x2) pool size
+*   **Conv2D Layer**: 64 filters, (3x3) kernel, ReLU activation
+*   **MaxPooling2D Layer**: (2x2) pool size
 *   **Flatten Layer**
 *   **Dense Layer**: 128 neurons, ReLU activation
 *   **Dropout Layer**: 50% dropout
 *   **Dense Layer**: 64 neurons, ReLU activation
 *   **Dropout Layer**: 50% dropout
-*   **Dense Layer**: Output layer with 2 neurons (for 2 classes), softmax activation
+*   **Output Layer**: 2 neurons (softmax activation for binary classification)
 
-### Optimizer and Loss Function
+### **Optimizer and Loss Function**
 
 *   **Optimizer**: Adam
 *   **Loss Function**: Sparse Categorical Crossentropy
 
-Training Results
-----------------
+🚀 **Training Results**
+-----------------------
 
-The model was trained for 10 epochs, and the following results were obtained:
+The model was trained for **10 epochs** with an 80-20 training-test split.
 
-Metric
+**Metric**
 
-Train Value
+**Train Value**
 
-Validation Value
+**Validation Value**
 
 **Loss**
 
@@ -196,58 +97,95 @@ Validation Value
 
 **Accuracy**
 
-0.8664
+86.64%
 
-0.8652
+86.52%
 
-The model achieves an accuracy of approximately 86% on both the training and validation datasets.
+As you can see, the model achieves excellent performance on both the training and validation datasets.
 
-Evaluation
-----------
+📈 **Training Progress**
+------------------------
 
-After training, the model was evaluated on the test data. Here are the final results:
+### **Loss Graph**
+
+The loss graph shows the reduction in error as the model learns over time:
+
+### **Accuracy Graph**
+
+The accuracy graph shows how the model's prediction accuracy improves with each epoch:
+
+🔍 **Model Evaluation**
+-----------------------
+
+After training, we evaluated the model on the test dataset, and the following results were obtained:
 
 *   **Test Loss**: 0.4207
 *   **Test Accuracy**: 86.52%
 
-### Example Predictions
+### **Sample Prediction Results**
 
-1.  **Prediction for a Hare Image**:
+Here are the results of the model's predictions:
+
+1.  **Prediction for a Hare Image**
     
-    *   Model predicted: **Hare**
-    *   Actual image:
+    *   **Model Prediction**: Hare
+    *   **Actual Image**:
         
-2.  **Prediction for a Bird Image**:
+2.  **Prediction for a Bird Image**
     
-    *   Model predicted: **Bird**
-    *   Actual image:
+    *   **Model Prediction**: Bird
+    *   **Actual Image**:
         
 
-How to Run
-----------
+🔧 **How to Use the Code**
+--------------------------
 
-To run this model on your local machine or a cloud platform, follow these steps:
+### 1\. **Clone the Repository**
 
-1.  **Install Required Libraries**:
-    
-    `pip install tensorflow numpy pandas matplotlib opencv-python pillow scikit-learn` 
-    
-2.  **Download the Dataset**: Ensure you have the dataset zipped and extracted. You can unzip the dataset by using the following:
-     
-    `from zipfile import ZipFile
-    with ZipFile('data(CNN).zip', 'r') as zip:
-        zip.extractall('data(CNN)')` 
-    
-3.  **Run the Training Script**:
-    
-    *   Execute the script provided in this repository. It will handle data loading, preprocessing, model training, and evaluation.
-4.  **Make Predictions**:
-    
-    *   After training, you can input new images and use the `model.predict()` method to classify them.
+Start by cloning this repository to your local machine:
 
-Future Improvements
--------------------
+`git clone https://github.com/your-username/bird-vs-hare-image-classification.git
+cd bird-vs-hare-image-classification` 
 
-*   **Data Augmentation**: Implementing data augmentation (rotations, flips, etc.) to increase the dataset's size and diversity could improve model performance.
-*   **Hyperparameter Tuning**: Experimenting with different architectures, optimizers, or activation functions to improve the model's accuracy further.
-*   **Real-Time Inference**: Integrating the model with real-time image capture systems for live predictions.
+### 2\. **Install the Required Libraries**
+
+You will need Python 3.x and the following libraries:
+
+`pip install tensorflow numpy pandas matplotlib opencv-python pillow scikit-learn` 
+
+### 3\. **Prepare the Dataset**
+
+The dataset is contained within a **zip file**. Make sure to unzip it in the correct directory. If the dataset is located at `/content/data(CNN).zip`, you can extract it as follows:
+
+`from zipfile import ZipFile
+with ZipFile('data(CNN).zip', 'r') as zip_ref:
+    zip_ref.extractall('data(CNN)')` 
+
+### 4\. **Run the Model Training**
+
+Run the script to start training:
+
+`python train_model.py` 
+
+### 5\. **Make Predictions**
+
+After training, you can input new images for classification. Use the following code to predict whether an image is of a hare or a bald eagle:
+
+`image_path = 'path_to_image.jpg'
+prediction = model.predict(image_path)
+print(prediction)` 
+
+🛠 **Future Improvements**
+--------------------------
+
+*   **Data Augmentation**: Add techniques like flipping, rotation, and scaling to augment the dataset, making the model more robust.
+*   **Hyperparameter Optimization**: Tune hyperparameters like the learning rate, batch size, and network architecture to improve accuracy further.
+*   **Transfer Learning**: Experiment with pre-trained models like VGG16 or ResNet50 to leverage existing knowledge for better performance.
+
+* * *
+
+### **Conclusion**
+
+This project demonstrates how to successfully build a deep learning model for image classification tasks using CNNs. With solid accuracy and a well-structured architecture, this model can be adapted to other classification problems with similar image datasets.
+
+We hope you find this project useful, and feel free to contribute or improve it!
